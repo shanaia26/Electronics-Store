@@ -156,6 +156,10 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
             Intent intent = new Intent(AdminMainActivity.this, AdminMainActivity.class);
             startActivity(intent);
 
+        } else if (id == R.id.nav_users) {
+            Intent intent = new Intent(AdminMainActivity.this, AdminSeeUsersActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_orders) {
             Intent intent = new Intent(AdminMainActivity.this, AdminUserOrdersActivity.class);
             startActivity(intent);

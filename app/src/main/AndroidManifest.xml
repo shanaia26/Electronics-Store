@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StripePaymentActivity"></activity>
+        <activity android:name=".ProductOrderHistoryActivity"></activity>
+        <activity android:name=".Admin.AdminSeeUsersActivity" />
+        <activity android:name=".Admin.AdminUserProductsActivity" />
+        <activity android:name=".StripePaymentActivity" />
         <activity android:name=".CheckoutActivity" />
         <activity android:name=".OrderHistoryActivity" />
         <activity android:name=".SearchProductsActivity" />
