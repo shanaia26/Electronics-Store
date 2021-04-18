@@ -13,9 +13,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.electronics_store.CartActivity;
+import com.example.electronics_store.Common.Common;
 import com.example.electronics_store.LoginActivity;
 import com.example.electronics_store.MainActivity;
+import com.example.electronics_store.OrderHistoryActivity;
+import com.example.electronics_store.ProfileActivity;
 import com.example.electronics_store.R;
+import com.example.electronics_store.SearchProductsActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class AdminMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -151,34 +156,32 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-            Intent intent = new Intent(AdminMainActivity.this, AdminMainActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_users) {
-            Intent intent = new Intent(AdminMainActivity.this, AdminSeeUsersActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_orders) {
-            Intent intent = new Intent(AdminMainActivity.this, AdminUserOrdersActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_product) {
-            Intent intent = new Intent(AdminMainActivity.this, AdminMainActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_maintain) {
-            Intent intent = new Intent(AdminMainActivity.this, MainActivity.class);
-            intent.putExtra("Admin", "Admin");
-            startActivity(intent);
-
-        } else if (id == R.id.nav_logout) {
-            Intent intent = new Intent(AdminMainActivity.this, LoginActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+        switch (id) {
+            case R.id.nav_home:
+            case R.id.nav_product:
+                Intent intent = new Intent(AdminMainActivity.this, AdminMainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_users:
+                Intent intentUsers = new Intent(AdminMainActivity.this, AdminSeeUsersActivity.class);
+                startActivity(intentUsers);
+                break;
+            case R.id.nav_orders:
+                Intent intentOrders = new Intent(AdminMainActivity.this, AdminUserOrdersActivity.class);
+                startActivity(intentOrders);
+                break;
+            case R.id.nav_maintain:
+                Intent intentMaintain = new Intent(AdminMainActivity.this, MainActivity.class);
+                intentMaintain.putExtra("Admin", "Admin");
+                startActivity(intentMaintain);
+                break;
+            case R.id.nav_logout:
+                Intent intentLogOut = new Intent(AdminMainActivity.this, LoginActivity.class);
+                intentLogOut.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intentLogOut);
+                break;
+            default:
         }
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

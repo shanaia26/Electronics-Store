@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.electronics_store.Admin.AdminMaintainProductsActivity;
+import com.example.electronics_store.Common.Common;
 import com.example.electronics_store.Model.Products;
 import com.example.electronics_store.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -162,32 +163,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-            Intent menuIntent = new Intent(MainActivity.this, MainActivity.class);
-            startActivity(menuIntent);
-
-        } else if (id == R.id.nav_search) {
-            if (!type.equals("Admin")) {
-                Intent intent = new Intent(MainActivity.this, SearchProductsActivity.class);
+        switch (id) {
+            case R.id.nav_home:
+                Intent menuIntent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(menuIntent);
+                break;
+            case R.id.nav_search:
+                if (!type.equals("Admin")) {
+                    Intent intent = new Intent(MainActivity.this, SearchProductsActivity.class);
+                    startActivity(intent);
+                }
+                break;
+            case R.id.nav_profile:
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.putExtra("name", Common.currentUser.getName());
+                intent.putExtra("email", Common.currentUser.getEmail());
+                intent.putExtra("phone", Common.currentUser.getPhone());
                 startActivity(intent);
-            }
-        } else if (id == R.id.nav_cart) {
-            if (!type.equals("Admin")) {
-                Intent cartIntent = new Intent(MainActivity.this, CartActivity.class);
-                startActivity(cartIntent);
-            }
-
-        } else if (id == R.id.nav_orders) {
-            if (!type.equals("Admin")) {
-                Intent orderIntent = new Intent(MainActivity.this, OrderHistoryActivity.class);
-                startActivity(orderIntent);
-            }
-        } else if (id == R.id.nav_logout) {
-            Intent mainActivity = new Intent(MainActivity.this, LoginActivity.class);
-            mainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(mainActivity);
-
+                break;
+            case R.id.nav_cart:
+                if (!type.equals("Admin")) {
+                    Intent cartIntent = new Intent(MainActivity.this, CartActivity.class);
+                    startActivity(cartIntent);
+                }
+                break;
+            case R.id.nav_orders:
+                if (!type.equals("Admin")) {
+                    Intent orderIntent = new Intent(MainActivity.this, OrderHistoryActivity.class);
+                    startActivity(orderIntent);
+                }
+                break;
+            case R.id.nav_logout:
+                Intent mainActivity = new Intent(MainActivity.this, LoginActivity.class);
+                mainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(mainActivity);
+                break;
+            default:
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

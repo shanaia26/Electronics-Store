@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.electronics_store.Common.Common;
 import com.example.electronics_store.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -83,7 +84,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
 
-                    Toast.makeText(AdminMaintainProductsActivity.this, "The product has been removed successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AdminMaintainProductsActivity.this, Common.ItemRemovedSuccessKey, Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -97,7 +98,8 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
 
         //Tell admin if anything is empty
         if(title.equals("") || price.equals("") || manufacturer.equals("") || quantity.equals("")){
-            Toast.makeText(AdminMaintainProductsActivity.this, "Empty Fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(AdminMaintainProductsActivity.this,
+                    Common.EmptyCredentialsKey, Toast.LENGTH_LONG).show();
         } else {
             HashMap<String, Object> productMap = new HashMap<>();
             productMap.put("productID", productID);
@@ -110,7 +112,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(AdminMaintainProductsActivity.this, "Changes applied successfully.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(AdminMaintainProductsActivity.this, Common.ChangesSuccessKey, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminMainActivity.class);
                         startActivity(intent);
                         finish();

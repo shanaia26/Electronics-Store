@@ -76,7 +76,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(aShipmentName) || TextUtils.isEmpty(aShipmentPhone) ||
                 TextUtils.isEmpty(aShipmentAddress)) {
-            Toast.makeText(CheckoutActivity.this, "Please provide full details.", Toast.LENGTH_LONG).show();
+            Toast.makeText(CheckoutActivity.this, Common.EmptyCredentialsKey, Toast.LENGTH_LONG).show();
         }else{
             ConfirmOrder(aShipmentName, aShipmentPhone, aShipmentAddress);
         }

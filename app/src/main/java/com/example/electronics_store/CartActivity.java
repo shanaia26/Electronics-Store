@@ -31,7 +31,6 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private Button nextProcessButton;
     private TextView totalPrice;
-    private TextView orderMessage;
 
     private int overallTotalPrice = 0;
 
@@ -137,7 +136,7 @@ public class CartActivity extends AppCompatActivity {
 
                                     adminCartReference.removeValue();
 
-                                    Toast.makeText(CartActivity.this, "Item removed successfully.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CartActivity.this, Common.ItemRemovedSuccessKey, Toast.LENGTH_LONG).show();
 
                                     Intent intent = new Intent(CartActivity.this, MainActivity.class);
                                     startActivity(intent);

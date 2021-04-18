@@ -60,7 +60,7 @@
             android:id="@+id/shipment_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/text_background"
             android:elevation="10dp"
             android:hint="Phone:"
@@ -71,7 +71,7 @@
             android:id="@+id/shipment_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/text_background"
             android:elevation="10dp"
             android:hint="Address:"
@@ -79,18 +79,12 @@
 
     </LinearLayout>
 
-    <View
-        android:id="@+id/divider_line1"
-        style="@style/Divider"
-        android:layout_marginTop="30dp"
-        android:layout_below="@id/address_layout" />
-
     <LinearLayout
         android:id="@+id/title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/divider_line1"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/address_layout"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
         <TextView
@@ -98,16 +92,22 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="AMOUNT TO PAY:"
-            android:textSize="20sp"
+            android:textSize="15dp"
             android:textColor="@color/colorPrimary"/>
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider_line1"
+        style="@style/Divider"
+        android:layout_below="@id/title2" />
+
 
     <LinearLayout
         android:id="@+id/subtotal_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title2"
+        android:layout_below="@+id/divider_line1"
         android:layout_marginBottom="20dp"
         android:elevation="10dp"
         android:orientation="horizontal">
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="  Subtotal: €"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView

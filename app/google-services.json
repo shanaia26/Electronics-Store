@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "931858646721",
+    "firebase_url": "https://electronic-store-edf4b-default-rtdb.firebaseio.com",
+    "project_id": "electronic-store-edf4b",
+    "storage_bucket": "electronic-store-edf4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931858646721:android:fc29365fb211f593b37640",
+        "android_client_info": {
+          "package_name": "com.example.electronics_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931858646721-4a10h3q9knn235u23ngdevvmmngj5hr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBagT-kXmXotnUp6r7ZzP772paJ0j5Z46s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931858646721-4a10h3q9knn235u23ngdevvmmngj5hr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

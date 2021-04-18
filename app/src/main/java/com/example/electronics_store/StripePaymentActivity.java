@@ -232,8 +232,7 @@ public class StripePaymentActivity extends AppCompatActivity {
 
         final DatabaseReference adminOrderReference = FirebaseDatabase.getInstance().getReference()
                 .child("Admin Orders")
-                .child(Common.currentUser.getPhone())
-                .child(orderID);
+                .child(Common.currentUser.getPhone());
 
         final DatabaseReference cartReference = FirebaseDatabase.getInstance().getReference()
                 .child("Cart List");
@@ -267,7 +266,7 @@ public class StripePaymentActivity extends AppCompatActivity {
         positiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(StripePaymentActivity.this, "Your order has been placed successfully.", Toast.LENGTH_LONG).show();
+                Toast.makeText(StripePaymentActivity.this, Common.OrderPlacedSuccessKey, Toast.LENGTH_LONG).show();
                 //Go back to main activity
                 Intent intent = new Intent(StripePaymentActivity.this, MainActivity.class);
                 //intent.putExtra("productID", productID);
